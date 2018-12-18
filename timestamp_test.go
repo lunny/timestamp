@@ -17,3 +17,10 @@ func TestTimeStamp(t *testing.T) {
 	assert.EqualValues(t, ti.Unix(), tm)
 	assert.EqualValues(t, ti.Format("2006-01-02 15:04:05"), tm.Format("2006-01-02 15:04:05"))
 }
+
+func TestTimeStampNano(t *testing.T) {
+	ti := time.Now()
+	tm := TimeStampNano(ti.UnixNano())
+	assert.EqualValues(t, ti.UnixNano(), tm)
+	assert.EqualValues(t, ti.Format("2006-01-02 15:04:05"), tm.Format("2006-01-02 15:04:05"))
+}
